@@ -1,0 +1,73 @@
+{% extends "mehandiApp/base.html" %}
+{% load static %}
+{% block contactactive %} bg-red-500 {% endblock contactactive %} 
+{% block footercontactactiveactive %} text-red-500 {% endblock footercontactactiveactive %}
+{% block javascript %}  <script src="{% static 'javascript/script.js' %} "></script> {% endblock javascript %}
+{% block body %}
+
+
+<div class="container mx-auto px-4 py-12 bg-gray-600 p-12 h-full">
+    <h2 class="text-4xl font-bold mb-10 text-center text-white">Get in <span class="text-orange-500"> Touch</span></h2>
+    <div class="flex flex-wrap items-center justify-center">
+        <!-- Contact Form Section -->
+        <div class="lg:w-1/2 w-full lg:pr-8">
+            <div class="bg-gray-50 rounded-lg shadow-md p-6">
+                {% if error %}
+                    <p style="color: red;">{{ error }}</p>
+                {% endif %}
+                <h2 class="text-3xl font-bold mb-6 text-gray-800">Start a Conversation</h2>
+                <form action="" method="POST" class="space-y-4">
+                    {% csrf_token %}
+                    <div class="flex flex-wrap -mx-2">
+                        <div class="w-full md:w-1/2 px-2 mb-4">
+                            <label for="name" class="block text-sm font-semibold text-gray-600 mb-1">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" class="w-full bg-gray-100 border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div class="w-full md:w-1/2 px-2 mb-4">
+                            <label for="phone" class="block text-sm font-semibold text-gray-600 mb-1">Phone Number</label>
+                            <input type="number" id="phone" name="phone_no" placeholder="Your phone number" class="w-full bg-gray-100 border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div class="w-full md:w-1/2 px-2 mb-4">
+                            <label for="email" class="block text-sm font-semibold text-gray-600 mb-1">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email Address" class="w-full bg-gray-100 border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500">
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-sm font-semibold text-gray-600 mb-1">Message</label>
+                        <textarea id="message" name="desc" rows="4" placeholder="Your Message" class="w-full bg-gray-100 border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500"></textarea>
+                    </div>
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md focus:outline-none">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Social Media/Location Section -->
+        <div class="lg:w-1/2 w-full mt-8 lg:mt-0 lg:pl-8">
+            <div class="bg-gray-50 rounded-lg shadow-md p-6">
+                <h2 class="text-3xl font-bold mb-6 text-gray-800">Social Media & Location</h2>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2 text-orange-500">Social Media</h3>
+                        <ul class="space-y-2">
+                            <li><a href="https://www.facebook.com/profile.php?id=100088806622493&mibextid=LQQJ4d" class="text-gray-600 hover:text-blue-500 transition duration-200"><i class="fab fa-facebook-square"></i> Facebook</a></li>
+                            <li><a href="https://www.instagram.com/invites/contact/?i=1ugd3rlmytiir&utm_content=q1upydp" class="text-gray-600 hover:text-blue-500 transition duration-200"><i class="fab fa-instagram-square"></i> Instagram</a></li>
+                            <li><a href="https://www.linkedin.com/in/manika-kumari-116134260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="text-gray-400 hover:text-blue-500 transition duration-300"><i class="fab fa-linkedin"></i> LinkdiIn</a></li>
+                            <li><a href="#" class="text-gray-600 hover:text-blue-500 transition duration-200"><i class="fab fa-whatsapp"></i> 9990147462</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2 text-orange-500">Location</h3>
+                        <div class="flex items-center space-x-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2C8.13 2 5 5.13 5 9c0 4.29 7 13 7 13s7-8.71 7-13c0-3.87-3.13-7-7-7zm0 9a2 2 0 100-4 2 2 0 000 4z" />
+                            </svg>
+                            <p class="text-gray-700">C4E Market, Janak Puri, Behind Safal Diary, New Delhi-110058</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

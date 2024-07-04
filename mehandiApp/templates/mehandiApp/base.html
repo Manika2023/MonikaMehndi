@@ -1,0 +1,131 @@
+{% load static %}
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <title>Monika Bridal Mehandi Art - looking for Delhi NCR </title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+		{% tailwind_css %}
+        {% block css %}  <link rel="stylesheet" href=" {% static 'css/style.css' %} "> {% endblock css %}
+        
+	</head>
+	<body class="bg-gray-900 font-serif leading-normal tracking-normal">
+
+     <!-- Navbar -->
+     <nav class="bg-green-500 p-4  sticky top-0 z-50">
+      <div class="container mx-auto flex justify-between items-center">
+          <a href="/" class="text-white text-2xl font-bold block md:flex"> <span class="text-orange-500"> Monika  </span> Mehndi Art</a>
+          <div class="block lg:hidden">
+          </div>
+          <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
+              <ul class="text-white lg:flex lg:justify-between">
+                  <li class="{% block homeactive %} {% endblock homeactive %}"><a class="block px-4 py-2 hover:underline hover:underline-offset-8" href="/">Home</a></li>
+                  <li class="{% block aboutactive %} {% endblock aboutactive %}"><a class="block px-4 py-2 hover:underline hover:underline-offset-8" href="{% url 'about' %}">About</a></li>
+                  <li class="{% block servicesactive %} {% endblock servicesactive %}"><a class="block px-4 py-2 hover:underline hover:underline-offset-8" href="{% url 'services' %}">Services</a></li>
+                  <li class="{% block galleryactive %} {% endblock galleryactive %}"><a class="block px-4 py-2 hover:underline hover:underline-offset-8" href="{% url 'gallery' %}">Gallery</a></li>
+                  <li class="{% block contactactive %} {% endblock contactactive %}"><a class="block px-4 py-2 hover:underline hover:underline-offset-8" href="{% url 'contact' %}">Contact</a></li>
+              </ul>
+          </div>
+          <button class="navbar-burger text-white focus:outline-none absolute top-4 right-4 lg:hidden">
+              <svg class="w-6 h-6" id="burger-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+          </button>
+          <button class="navbar-close text-white focus:outline-none absolute top-4 right-4 hidden" id="close-icon">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+          </button>
+      </div>
+  </nav>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const burgerIcon = document.getElementById('burger-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const menu = document.getElementById('menu');
+        const navbarBurger = document.querySelector('.navbar-burger');
+        const navbarClose = document.querySelector('.navbar-close');
+        const menuItems = document.querySelectorAll('#menu a');
+  
+        function toggleMenu() {
+            menu.classList.toggle('hidden');
+            burgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        }
+  
+        navbarBurger.addEventListener('click', toggleMenu);
+        navbarClose.addEventListener('click', toggleMenu);
+  
+        menuItems.forEach(item => {
+            item.addEventListener('click', function() {
+                if (!menu.classList.contains('hidden')) {
+                    toggleMenu();
+                }
+            });
+        });
+    });
+</script>
+
+   {% block body %}{% endblock body %}
+
+   <footer class="bg-white text-gray-800 py-8">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row gap-6 md:justify-between md:items-center">
+        <!-- Logo Section -->
+        <div class="flex items-center mb-4 lg:mb-0">
+            {% comment %} <img src="" alt="Company Logo" class="h-10 w-auto mr-4"> {% endcomment %}
+            <h1 class="text-xl font-bold">Monika Mehndi Art</h1>
+        </div>
+        <!-- Navigation Links -->
+        <nav class="mb-4 lg:mb-0">
+            <ul class="flex flex-col">
+              <p class="text-blue-500 mb-2">quick links</p>
+              <div class="space-y-1">
+                <li class="{% block footerhomeactive %} {% endblock footerhomeactive %}"><a href="/" class="hover:text-blue-500 transition duration-300">Home</a></li>
+                <li class="{% block footeraboutactive %} {% endblock footeraboutactive %}"><a href="{% url 'about' %}" class="hover:text-blue-500  transition duration-300">About</a></li>
+                <li class="{% block footerservicesactive %} {% endblock footerservicesactive %}"><a href="{% url 'services' %} " class="hover:text-blue-500 transition duration-300">Services</a></li>
+                <li class="{% block footergalleryactive %} {% endblock footergalleryactive %}"><a href="{% url 'gallery' %} " class="hover:text-blue-500 transition duration-300">Gallery</a></li>
+                <li class="{% block footercontactactiveactive %} {% endblock footercontactactiveactive %}"><a href="{% url 'contact' %}" class="hover:text-blue-500 transition duration-300">Contact</a></li>
+              </div>
+            </ul>
+        </nav>
+        <!-- Contact Information -->
+        <div class="mb-4 lg:mb-0">
+            <p class="text-sm text-blue-500 mb-2">Contact Us:</p>
+            <div class="space-y-2">
+              <p class="text-sm text-gray-600">C4E Market, Janak Puri, Behind Safal Diary, New Delhi-110058</p>
+              <p class="text-sm text-gray-600">Email: manikak220@gmail.com</p>
+              <p class="text-sm text-gray-600">Phone: +999 014 7462</p>
+            </div>
+        </div>
+        <!-- Social Media Icons -->
+        <div>
+            <p class="text-sm text-blue-500 mb-2">Follow Us:</p>
+            <ul class="flex space-x-4">
+                <li><a href="https://www.facebook.com/profile.php?id=100088806622493&mibextid=LQQJ4d" class="text-gray-400 hover:text-blue-500 transition duration-300"><i class="fab fa-facebook"></i></a></li>
+               
+                <li><a href="https://www.instagram.com/invites/contact/?i=1ugd3rlmytiir&utm_content=q1upydp" class="text-gray-400 hover:text-blue-500 transition duration-300"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/manika-kumari-116134260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="text-gray-400 hover:text-blue-500 transition duration-300"><i class="fab fa-linkedin"></i></a></li>
+              
+            </ul>
+        </div>
+    </div>
+    <div class="mt-4 border-t border-gray-600 pt-4 flex flex-wrap items-center justify-between">
+        <!-- Legal Information -->
+        <div class="text-sm text-gray-600">
+            <p>&copy; 2024 Monika Mehndi Art. All rights reserved.</p>
+        </div>
+        <!-- Back to Top Button -->
+        <a href="#" class="bg-gray-700 hover:bg-gray-600 cursor-pointer text-white px-4 py-2 rounded-md transition duration-300">
+            Back to Top <i class="fas fa-arrow-up ml-1"></i>
+        </a>
+    </div>
+
+</footer>
+
+	</body>
+    {% block javascript %}  <script src="{% static 'javascript/script.js' %} "></script> {% endblock javascript %}
+
+</html>

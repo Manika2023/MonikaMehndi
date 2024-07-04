@@ -1,0 +1,651 @@
+{% extends "mehandiApp/base.html" %}
+{% load static %}
+{% block aboutactive %} bg-red-500 {% endblock aboutactive %}
+{% block footeraboutactive %} text-red-500 {% endblock footeraboutactive %}
+
+{% block css %}  <link rel="stylesheet" href=" {% static 'css/style.css' %} ">{% endblock css %}
+{% block javascript %}  <script src="{% static 'javascript/script.js' %} "></script> {% endblock javascript %}
+{% block body %}
+  
+<div class="bg-gray-800 text-white">
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-20 ">
+        <div class="container mx-auto px-6 text-center md:text-left">
+            <h1 class="text-5xl font-bold mb-4 text-orange">About Monika Mehndi Art</h1>
+            <p class="text-lg mb-6">Where tradition meets contemporary elegance!  Our talented artists are dedicated to providing the highest quality service, ensuring that each design is a masterpiece.</p>
+            <a href="#our-story" class="inline-block bg-orange-500 text-white py-3 px-6 rounded-md hover:bg-orange-600">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="our-story" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="md:flex md:items-start">
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl font-bold mb-4">Our  <span class="text-orange-500 p-2 rounded-md shadow-lg">Story</span></h2>
+
+                    <p class="mb-6">
+                      Monika Mehndi Art is not just a business; it's a journey of passion, creativity, and cultural celebration that began over a decade ago. Founded by Monika herself, driven by a deep love for the intricate artistry of Mehndi, our journey started with humble beginnings and a vision to transform traditional Mehndi into contemporary expressions of beauty.
+                  </p>
+                  <p class="mb-6">
+                      From the outset, our goal has been to blend the richness of traditional Mehndi designs with the evolving tastes and preferences of today's brides and clients. What sets us apart is our unwavering commitment to quality, creativity, and customer satisfaction. Each design that leaves our studio is a masterpiece, meticulously crafted to adorn hands and hearts with elegance and joy.
+                  </p>
+                  <p class="mb-6">
+                      Over the years, Monika Mehndi Art has grown into a renowned name in the industry, known for its bespoke bridal designs, vibrant festival patterns, and personalized services for all occasions. Our team of skilled artists, handpicked for their talent and dedication, bring years of experience and a passion for Mehndi that shines through in every stroke they create.
+                  </p>
+                  <p class="mb-6">
+                      Beyond the art itself, our studio is a place where cultures converge and stories unfold. We have had the privilege of being part of countless weddings, festivals, and milestone celebrations, each one adding to the tapestry of our journey. It is in these moments that we find our greatest fulfillment—seeing the joy on our clients' faces as they wear our Mehndi designs with pride and grace.
+                  </p>
+                  <p class="mb-6">
+                      As we look ahead, Monika Mehndi Art continues to evolve, embracing new trends while staying true to our roots. Our commitment to innovation drives us to explore new techniques and styles, ensuring that every client gets a Mehndi experience that is as unique as they are. Whether it's a traditional bridal Mehndi, a festive design for celebrations, or a personalized piece for a special event, we are here to exceed expectations and make every moment memorable.
+                  </p>
+                  <p class="mb-6">
+                      Join us on our journey of artistry, culture, and celebration. Let Monika Mehndi Art be your partner in transforming your special occasions into unforgettable memories, one beautiful Mehndi design at a time.
+                  </p>
+          
+                    <a href="#our-mission" class="inline-block mb-7 bg-orange-500 sm text-white py-3 px-6 rounded-md hover:bg-orange-600">Our Mission</a>
+                </div>
+                <div class="md:w-1/2 md:pl-10 relative top-0">
+                    <img src="{% static 'image/Monika.jpg' %}" alt="Mehndi Design" class="rounded-lg shadow-lg w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section id="our-mission" class="py-20 bg-gray-600">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-4">Our  <span class="text-orange-500 p-2 rounded-md shadow-lg"> Mission</span></h2>
+            <p class="mb-6">Our mission is to bring the rich cultural heritage of Mehndi to life through our exquisite designs. We strive to enhance every occasion with our artistry, ensuring that each client leaves with a smile and beautiful memories.</p>
+            <a href="#meet-the-team" class="inline-block bg-orange-500 text-white py-3 px-6 rounded-md hover:bg-orange-600">Meet the Team</a>
+        </div>
+    </section> 
+
+   
+    {% comment %} section for team section {% endcomment %}
+<section class="bg-gray-800 mt-11">
+    <h2 class="text-4xl font-bold mb-10 text-center">Meet The  <span class="text-orange-500 p-2 rounded-md shadow-lg">Team</span></h2>
+    <div class="flex">
+      <div class="w-2/12 flex items-center">
+        <div class="w-full text-right">
+          <button
+            onclick="prev()"
+            class="p-3 rounded-full bg-orange-500 border border-orange-900 shadow-lg mr-5"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+  
+      <div id="sliderContainer" class="w-10/12 overflow-hidden">
+        <ul id="slider" class="flex w-full">
+          <!-- Cloned Slides for Infinite Loop -->
+          <li class=" p-5">
+            <div class="p-4 flex-1  min-h-[15rem]">
+              <div class="p-6 bg-gray-600 rounded-lg shadow-lg testimonial-card">
+                <img src=" {% static 'image/Monika.jpg' %} " alt="Testimonial" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <div class="text-center mb-4">
+                  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                </div>
+                
+                <h3 class="text-xl font-semibold mb-2 text-orange-500">Monika</h3>
+                    <p class="text-blue-700 mb-4">Founder & Lead Artist</p>
+                    <p class="text-gray-100">With a decade of experience in Mehndi artistry, Monika leads our team with passion and creativity. Her dedication 
+                  to traditional designs and modern interpretations sets the tone for our studio.</p>
+              </div>
+            </div>
+          </li>
+          <li class=" p-5">
+            <div class="p-4 flex-1  min-h-[15rem]">
+              <div class="p-6 bg-gray-600 rounded-lg shadow-lg testimonial-card">
+                <img src="{% static 'image/Aakash.jpg' %} " alt="Testimonial" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <div class="text-center mb-4">
+                  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-orange-500">Aakash</h3>
+                <p class="text-blue-500 mb-4">Theme Designer</p>
+                <p class="text-gray-100">Aakash specializes in creating captivating themes that complement Mehndi designs, enhancing the overall aesthetic appeal of events and celebrations.
+                His innovative ideas and attention to detail transform venues into enchanting settings that perfectly reflect our clients' visions and preferences.</p>
+              </div>
+            </div>
+          </li>
+          <!-- Original Slides -->
+          <li class=" p-5">
+            <div class="p-4 flex-1 min-h-[15rem]">
+              <div class="p-6 bg-gray-600 rounded-lg shadow-lg testimonial-card">
+                <img src=" {% static 'image/Kunila.png' %} " alt="Testimonial" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <div class="text-center mb-4">
+                  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-orange-500">Kunila </h3>
+                <p class="text-blue-500 mb-4">Senior Artist</p>
+                <p class="text-gray-100">Riya brings her artistic flair and attention to detail to every Mehndi design she creates. Her ability to blend tradition with
+               contemporary styles ensures each client receives a personalized and exquisite experience.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class=" p-5">
+            <div class="p-4 flex-1  min-h-[15rem]">
+              <div class="p-6 bg-gray-600 rounded-lg shadow-lg testimonial-card">
+                <img src="{% static 'image/Aakash.jpg' %} " alt="Testimonial" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <div class="text-center mb-4">
+                  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-orange-500 ">Aakash</h3>
+                <p class="text-blue-500 mb-4">Creative Director</p>
+                <p class="text-gray-100">As our Creative Director, he brings innovation and 
+                  vision to Monika Mehndi Art. His expertise in design trends and customer experience ensures our studio remains at the forefront of Mehndi artistry.</p>
+              </div>
+            </div>
+          </li>
+        
+          
+          <li class=" p-5">
+            <div class="p-4 flex-1  min-h-[15rem]">
+              <div class="p-6 bg-gray-600 rounded-lg shadow-lg testimonial-card">
+                <img src=" {% static 'image/Prakash.jpg' %} " alt="Testimonial" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <div class="text-center mb-4">
+                  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                </div>
+              
+                <h3 class="text-xl font-semibold mb-2 text-orange-500">Prakash</h3>
+                <p class="text-blue-500 mb-4">Client Relations Manager</p>
+                <p class="text-gray-100">Prakash ensures seamless client experiences at Monika Mehndi Art. With a friendly demeanor and strong organizational skills,
+                   he manages bookings and ensures 
+                  each client feels valued and appreciated throughout their Mehndi journey with us.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class=" p-5">
+            <div class="p-4 flex-1  min-h-[15rem]">
+              <div class="p-6 bg-gray-600 rounded-lg shadow-lg testimonial-card">
+                <img src=" {% static 'image/Aakash.jpg' %} " alt="Testimonial" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <div class="text-center mb-4">
+                  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-orange-500 ">Aakash</h3>
+                <p class="text-blue-500 mb-4">Creative Director</p>
+                <p class="text-gray-100">As our Creative Director, he brings innovation and 
+                  vision to Monika Mehndi Art. His expertise in design trends and customer experience ensures our studio remains at the forefront of Mehndi artistry.</p>
+              </div>
+            </div>
+          </li>
+         
+          <li class=" p-5">
+            <div class="p-4 flex-1  min-h-[15rem]">
+              <div class="p-6 bg-gray-600 rounded-lg shadow-lg testimonial-card">
+                <img src=" {% static 'image/Prakash.jpg' %} " alt="Testimonial" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <div class="text-center mb-4">
+                  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-orange-500">Prakash</h3>
+                <p class="text-blue-500 mb-4">creative Designer</p>
+                <p class="text-gray-100">Prakash brings a unique blend of creativity and precision to her role as our Creative Designer.                    Priya's dedication to excellence ensures that each design she creates at Monika Mehndi Art is
+                   not only visually captivating but also meaningful and tailored to our clients' preferences.</p>
+              </div>
+            </div>
+          </li>
+          <!-- Cloned Slides for Infinite Loop -->
+          <li class=" p-5">
+            <div class="p-4 flex-1  min-h-[15rem]">
+              <div class="p-6 bg-gray-600 rounded-lg shadow-lg testimonial-card">
+                <img src=" {% static 'image/Aakash.jpg' %} " alt="Testimonial" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <div class="text-center mb-4">
+                  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-orange-500">Aakash</h3>
+                <p class="text-blue-500 mb-4">Theme Designer</p>
+                <p class="text-gray-100">Aakash specializes in creating captivating themes that complement Mehndi designs, enhancing the overall aesthetic appeal of events and celebrations.
+                His innovative ideas and attention to detail transform venues into enchanting settings that perfectly reflect our clients' visions and preferences.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class=" p-5">
+            <div class="p-4 flex-1  min-h-[15rem]">
+              <div class="p-6 bg-gray-600 rounded-lg shadow-lg testimonial-card">
+                <img src=" {% static 'image/Prakash.jpg' %} " alt="Testimonial" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <div class="text-center mb-4">
+                  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-orange-500">Prakash</h3>
+                <p class="text-blue-500 mb-4">creative Designer</p>
+                <p class="text-gray-100">Prakash brings a unique blend of creativity and precision to her role as our Creative Designer.                    Priya's dedication to excellence ensures that each design she creates at Monika Mehndi Art is
+                   not only visually captivating but also meaningful and tailored to our clients' preferences.</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+   
+  
+      <div class="w-2/12 flex items-center">
+
+        <div class="w-full">
+          <button onclick="next()"
+            class="p-3 rounded-full bg-orange-600 border border-orange-900 shadow-lg ml-5"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+              />
+            </svg> 
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+   
+
+ {% comment %} section of customer reviews {% endcomment %}
+
+ <section class="review-container m-2 mb-5">
+  <h2 class="text-4xl font-bold mb-10 text-center">Customers <span class="text-orange-500 p-2 rounded-md shadow-lg">Review</span></h2></h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 bg-gray-600 py-5"> 
+
+    <div class="mx-auto max-w-xl rounded-md text-white bg-gray-800 p-1">
+      <div class="flex flex-col rounded-md bg-gray-800 text-white">
+        <div class="flex flex-1 flex-col justify-between p-8">
+          <div class="mb-4 flex space-x-2">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="h-6 w-6 text-yellow-500"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="h-6 w-6 text-yellow-500"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="h-6 w-6 text-yellow-500"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="h-6 w-6 text-yellow-500"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="h-6 w-6 text-yellow-500"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+          </div>
+          <div class="flex-1 pt-2">
+            <blockquote>
+              <p class="text-lg text-gray-100">
+                "I had the most beautiful bridal Mehndi done by Monika Mehndi Art. The designs were intricate and exactly what I had envisioned for my big day. The team was professional, punctual, and incredibly talented.
+                 I received so many compliments on my Mehndi, and it lasted beautifully for weeks. Highly recommend Monika Mehndi Art for any special occasion!"
+   
+              </p>
+            </blockquote>
+          </div>
+          <div class="mt-8 border-t border-gray-300 pt-4 dark:border-gray-800">
+            <div class="flex items-center">
+             
+              <div class="ml-3 min-w-0">
+                <p class="truncate text-base font-semibold text-gray-100">
+                  -Anjali Sharma
+                </p>
+      
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-auto max-w-xl rounded-md bg-gray-800 text-white p-1">
+      <div class="flex flex-col rounded-md bg-gray-800 text-white">
+        <div class="flex flex-1 flex-col justify-between p-8">
+          <div class="mb-4 flex space-x-2">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="h-6 w-6 text-yellow-500"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="h-6 w-6 text-yellow-500"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="h-6 w-6 text-yellow-500"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="h-6 w-6 text-yellow-500"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="h-6 w-6 text-yellow-500"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+          </div>
+          <div class="flex-1 pt-2">
+            <blockquote>
+              <p class="text-lg text-gray-100">
+                "I've always admired the beautiful Mehndi designs by Monika Mehndi Art. For my engagement, I decided to book their services, and I was blown away by their creativity and attention to detail. The designs were stunning, and the color turned out to be rich and long-lasting.
+                 Their professionalism and artistry made my special day even more memorable. Thank you, Monika Mehndi Art!"
+              </p>
+            </blockquote>
+          </div>
+          <div class="mt-8 border-t border-gray-300 pt-4 dark:border-gray-800">
+            <div class="flex items-center">
+             
+              <div class="ml-3 min-w-0">
+                <p class="truncate text-base font-semibold text-gray-100">
+                  -Nikita 
+                </p>
+             
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-auto max-w-xl rounded-md bg-gray-800 p-1">
+      <div class="flex flex-col rounded-md bg-gray-800">
+        <div class="flex flex-1 flex-col justify-between p-8">
+          <div class="mb-4 flex space-x-2">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="h-6 w-6 text-yellow-500"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="h-6 w-6 text-yellow-500"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="h-6 w-6 text-yellow-500"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="h-6 w-6 text-yellow-500"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="h-6 w-6 text-yellow-500"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>
+          </div>
+          <div class="flex-1 pt-2">
+            <blockquote>
+              <p class="text-lg text-gray-100">
+                "Monika Mehndi Art provided outstanding service for my friend's bridal Mehndi. The artists were incredibly skilled and created intricate designs that were admired by everyone. The Mehndi color was deep and lasted well beyond the wedding celebrations.
+                 I highly recommend Monika Mehndi Art for any special occasion. They truly exceeded our expectations!"
+              </p>
+            </blockquote>
+          </div>
+          <div class="mt-8 border-t border-gray-300 pt-4 dark:border-gray-800">
+            <div class="flex items-center">
+              {% comment %} <img
+                class="h-10 w-10 flex-shrink-0 rounded-full object-cover"
+                src=" "
+                alt=""
+              /> {% endcomment %}
+              <div class="ml-3 min-w-0">
+                <p class="truncate text-base font-semibold text-gray-100">
+                  -Anita
+                </p>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </section>
+
+  {% comment %} contact section {% endcomment %}
+  <section class="bg-gray-600 py-12 mt-7">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-10 text-center ">Get in <span class="text-orange-500 p-2 rounded-md shadow-lg">Touch</span></h2></h2>
+
+        <div class="flex flex-wrap items-center justify-center">
+            <!-- Contact Form Section -->
+            <div class="lg:w-1/2 w-full lg:pr-8">
+                <div class="bg-gray-50 rounded-lg shadow-md p-6">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Start a Conversation</h2>
+                    <form action="/contact/" method="POST" class="space-y-4">
+                      {% csrf_token %}
+                        <div class="flex flex-wrap -mx-2">
+                            <div class="w-full md:w-1/2 px-2 mb-4">
+                                <label for="name" class="block text-sm font-semibold text-gray-600 mb-1">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your Name" class="w-full bg-gray-100 text-black border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div class="w-full md:w-1/2 px-2 mb-4">
+                                <label for="phone" class="block text-sm font-semibold text-gray-600 mb-1">Phone Number</label>
+                                <input type="number" id="phone_no" name="phone_no" placeholder="Your phone number" class="w-full bg-gray-100 text-black border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div class="w-full md:w-1/2 px-2 mb-4">
+                                <label for="email" class="block text-sm font-semibold text-gray-600 mb-1">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="Your Email Address" class="w-full bg-gray-100 text-black border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500">
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                          <label for="message" class="block text-sm font-semibold text-gray-600 mb-1">Message</label>
+                          <textarea id="message" name="desc" rows="4" placeholder="Your Message" class="w-full bg-gray-100 text-black border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500"></textarea>
+                      </div>
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md focus:outline-none">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <!-- Social Media/Location Section -->
+            <div class="lg:w-1/2 w-full mt-8 lg:mt-0 lg:pl-8">
+                <div class="bg-gray-50 rounded-lg shadow-md p-6">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Social Media & Location</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2 text-orange-500">Social Media</h3>
+                            <ul class="flex space-x-4">
+                              <div>
+                                <li><a href="#" class="text-gray-600 hover:text-blue-500 transition duration-200"><i class="fab fa-facebook-square"> </i> Facebook</a></li><br>
+                              </div>
+                              
+                              <div>
+                                <li><a href="#" class="text-gray-600 hover:text-blue-500 transition duration-200"><i class="fab fa-instagram-square"></i> Instagram</a></li><br>
+                              </div>
+                            
+                              <div>
+                                <li><a href="" class="text-gray-600 hover:text-green-500 transition duration-200"><i class="fab fa-whatsapp"></i> 9897989437</a></li>
+                              </div>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2 text-orange-500">Location</h3>
+                            <div class="flex items-center space-x-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2C8.13 2 5 5.13 5 9c0 4.29 7 13 7 13s7-8.71 7-13c0-3.87-3.13-7-7-7zm0 9a2 2 0 100-4 2 2 0 000 4z" />
+                                </svg>
+                                <p class="text-gray-700">123 Main Street, Cityville, State, Country</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+ </section>
+
+ 
+{% endblock body %}

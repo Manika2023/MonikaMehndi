@@ -1,0 +1,262 @@
+{% extends "mehandiApp/base.html" %}
+{% load static %}
+{% block homeactive %} bg-red-500 {% endblock homeactive %}
+{% block footerhomeactive %} text-red-500 {% endblock footerhomeactive %}
+{% block javascript %}  <script src="{% static 'javascript/script.js' %} "></script> {% endblock javascript %}
+<style>
+     #carousel {
+         transition: transform 120s ease;
+     }
+       
+ </style>
+{% block body %}
+<div class="bg-gray-800">
+
+   <!-- Add the slideshow container -->
+<div id="slideshow" class="relative overflow-hidden h-screen">
+
+    <!-- Slide 1 -->
+    <section class="slide bg-cover bg-gray-600 bg-center h-screen" style="background-image: url(static/image/hero-image-1.jpg);">
+        <div class="container mx-auto h-full flex items-center justify-center">
+            <div class="text-center text-white">
+                <h2 class="text-5xl font-bold mb-4">Beautiful Mehndi for Every Occasion</h2>
+                <p class="mb-8 text-white text-2xl">Enhancing your beauty with intricate and elegant Mehndi designs</p>
+                <a href="{% url 'contact' %}" class="bg-orange-500 text-white py-3 px-6 rounded-md hover:bg-orange-600">Book Now</a>
+                <a href="{% url 'contact' %}" class="bg-blue-500 text-white py-3 px-6 rounded-md hover:bg-orange-600">Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 2 -->
+    <section class="slide bg-cover bg-gray-600 bg-center h-screen" style="background-image: url('static/image/hero-image2.jpg');">
+        <div class="container mx-auto h-full flex items-center justify-center">
+            <div class="text-center text-white">
+                <h2 class="text-5xl font-bold mb-4">Elegant Designs for Every Occasion</h2>
+                <p class="text-2xl mb-8 text-white">Creating memories with our unique and beautiful Mehndi designs</p>
+                <a href="{% url 'contact' %}" class="bg-orange-500 text-white py-3 px-6 rounded-md hover:bg-orange-600">Contact us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3 -->
+    <section class="slide bg-cover bg-gray-600 bg-center h-screen" style="background-image: url('static/image/hero3.jpg');">
+        <div class="container mx-auto h-full flex items-center justify-center">
+            <div class="text-center text-white">
+                <h2 class="text-5xl font-bold mb-4 text-purple-950">Intricate Mehndi for Your Special Day</h2>
+                <p class="text-2xl mb-8 text-purple-950">Let our Mehndi artists add a touch of elegance to your celebrations</p>
+                <a href="{% url 'about' %}" class="bg-orange-500 text-white py-3 px-6 rounded-md hover:bg-orange-600">About Us</a>
+                <a href="{% url 'services' %}" class="bg-blue-500 outline-offset-4 text-white py-3 px-6 rounded-md hover:bg-blue-600">Services</a>
+            </div>
+        </div>
+    </section>
+
+  
+
+    <!-- Left and Right Navigation -->
+    <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white text-gray-800 p-3 rounded-full shadow-lg" onclick="prevSlide()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+    </button>
+    <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white text-gray-800 p-3 rounded-full shadow-lg" onclick="nextSlide()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+    </button>
+</div>
+
+<script>
+    
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.display = (i === index) ? 'block' : 'none';
+        });
+    }
+
+    function nextSlide() {
+        slideIndex = (slideIndex + 1) % totalSlides;
+        showSlide(slideIndex);
+    }
+
+    function prevSlide() {
+        slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+        showSlide(slideIndex);
+    }
+
+    function autoSlide() {
+        nextSlide();
+        setTimeout(autoSlide, 5000);
+    }
+
+    // Initialize slideshow
+    showSlide(slideIndex);
+    setTimeout(autoSlide, 5000);
+
+</script>
+
+
+
+    <section id="portfolio" class="py-16 bg-gray-800">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8 text-white">Our <span class="text-orange-500 p-2 rounded-md shadow-lg">Portfolio</span></h2>
+            <p class="text-lg text-blue-500 mb-12">Take a look at some of our recent work and get inspired for your own Mehndi design.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-600 p-6 rounded-lg shadow-md">
+                    <img src=" {% static 'image/image-portfolio3.jpg' %} " alt="Portfolio Image 1" class="w-full h-64 object-cover rounded-md mb-4">
+                    <p class="text-white">A stunning bridal design</p>
+                </div>
+                <div class="bg-gray-600 p-6 rounded-lg shadow-md">
+                    <img src="{% static 'image/image-festival3.jpg' %}" alt="Portfolio Image 2" class="w-full h-64 object-cover rounded-md mb-4">
+                    <p class="text-white">Elegant festival design</p>
+                </div>
+                <div class="bg-gray-600 p-6 rounded-lg shadow-md">
+                    <img src="{% static 'image/image-portfolio1.jpg' %}" alt="Portfolio Image 3" class="w-full h-64 object-cover rounded-md mb-4">
+                    <p class="text-white">Casual Mehndi design</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% comment %} services {% endcomment %}
+  
+
+     <!-- Why Choose Us Section -->
+     <section id="why-choose-us" class="py-16 bg-gray-600">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8 text-white">Why   <span class="text-orange-500 p-2 rounded-md shadow-lg"> Choose Us</span></h2>
+            <p class="text-lg text-blue-500 mb-12">Discover why our Mehndi service is the perfect choice for your special occasion.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="bg-gray-800 text-gray-100 p-6 rounded-lg shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4 mx-auto text-green-600" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                    <h3 class="text-2xl font-semibold mb-4 text-orange-500">Experienced Artists</h3>
+                    <p>Our team consists of highly skilled Mehndi artists with years of experience in creating intricate designs.</p>
+                </div>
+                <div class="bg-gray-800 text-gray-100 p-6 rounded-lg shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4 mx-auto text-green-600" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                    <h3 class="text-2xl font-semibold mb-4 text-orange-500">High-Quality Products</h3>
+                    <p>We use only natural, high-quality Mehndi to ensure beautiful and long-lasting designs.</p>
+                </div>
+                <div class="bg-gray-800 text-gray-100 p-6 rounded-lg shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4 mx-auto text-green-600" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                    <h3 class="text-2xl font-semibold mb-4 text-orange-500">Customer Satisfaction</h3>
+                    <p>Our priority is customer satisfaction. We ensure you are happy with our service and the final design.</p>
+                </div>
+                <div class="bg-gray-800 text-gray-100 p-6 rounded-lg shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4 mx-auto text-green-600" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                    <h3 class="text-2xl font-semibold mb-4 text-orange-500">100% Color Guarantee</h3>
+                    <p>We guarantee rich and deep color with our Mehndi, ensuring your designs look stunning and vibrant.</p>
+                </div>
+                <div class="bg-gray-800 text-gray-100 p-6 rounded-lg shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4 mx-auto text-green-600" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                    <h3 class="text-2xl font-semibold mb-4 text-orange-500">Affordable Pricing</h3>
+                    <p>We offer competitive pricing without compromising on quality, ensuring you get the best value for your money.</p>
+                </div>
+                <div class="bg-gray-800 text-gray-100 p-6 rounded-lg shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4 mx-auto text-green-600" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                    <h3 class="text-2xl font-semibold mb-4 text-orange-500">Convenient Booking</h3>
+                    <p>Our simple and flexible booking process makes it easy for you to book your Mehndi session without any trouble.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- services Section -->
+
+   
+    <section id="services" class="py-16 bg-gray-800">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8 text-white">Our <span class="text-orange-500 p-2 rounded-md shadow-lg">Services</span></h2>
+            <p class="text-lg text-blue-500 mb-12">
+                We offer a wide range of Mehndi services to make every occasion special and memorable.
+                 Our expert artists create stunning designs tailored to your preferences, ensuring the highest quality and satisfaction.
+            </p>
+    
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <div class="bg-gray-600 p-6 rounded-lg shadow-md">
+                    <img src="{% static 'image/hero-image4.jpg' %}" alt="Portfolio Image 1" class="w-full h-64 object-cover rounded-md mb-4">
+                    <h1 class="text-orange-500 text-2xl my-2"> Bridal design</h1>
+                    <p class="text-gray-100">Our skilled artists specialize in creating intricate and personalized bridal Mehndi designs that reflect
+                         the bride's unique style and personality. From traditional motifs to modern patterns, we ensure every design is a work of art.
+                          We offer complete customization of Mehndi designs to include elements that are meaningful to the bride, such as initials, wedding 
+                          dates, or personal symbols, making each design truly unique and special. We use the highest quality henna to ensure deep, rich, and long-lasting color that enhances the 
+                          beauty of the bride's hands and feet, making her the center of attention on her big day.
+                    </p>
+                </div>
+
+                <div class="bg-gray-600 p-6 rounded-lg shadow-md">
+                    <img src="{% static 'image/image-festival2.jpg' %}" alt="Portfolio Image 2" class="w-full h-64 object-cover rounded-md mb-4">
+                    
+                    <h1 class="text-orange-500 my-2 text-2xl"> festival design</h1>
+                    <p class="text-gray-100">Our artists create beautiful Mehndi designs perfect for festivals and celebrations.
+                         We offer a variety of patterns, from traditional motifs like paisleys and flowers to modern and trendy styles. 
+                         Each design is carefully crafted to add a touch of elegance and joy to your festive look.
+                          We use high-quality henna to ensure a rich and long-lasting color, making sure you stand out and feel special during your celebrations.
+                    </p>
+                </div>
+                <div class="bg-gray-600 p-6 rounded-lg shadow-md">
+                    <img src="{% static 'image/image-occassional5.jpg' %}" alt="Portfolio Image 3" class="w-full h-64 object-cover rounded-md mb-4">
+                    <h1 class="text-2xl my-2 text-orange-500">Occasional mehndi</h1>
+                    <p class="text-gray-100">Celebrate your special moments with our exquisite occasional Mehendi designs. Whether it's a birthday, anniversary, or any special event, our skilled artists create beautiful 
+                        and unique Mehndi patterns that match the spirit of your celebration. We blend traditional and contemporary styles
+                         to craft designs that are both elegant and trendy. Using the finest quality henna, we ensure a deep, vibrant color that lasts, making your occasion even more memorable and joyful.
+                    </p>
+                </div>
+            </div>
+            <div class="btn mt-8">
+                <a href="{% url 'services' %}" class="outline-offset-4 bg-blue-500 text-white py-3 px-6 rounded-md hover:bg-blue-600">Show more -></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-gray-800 py-16">
+        <div class="container mx-auto px-6 text-center text-white">
+            <h2 class="text-4xl font-bold mb-8">What Our<span class="text-orange-500 p-2 rounded-md shadow-lg">  Clients Say </span></h2>
+            <p class="text-lg mb-12 text-blue-500">Hear from some of our happy clients who trusted us with their Mehndi needs.</p>
+            
+            <div class="flex flex-wrap justify-center">
+                <div class="w-full md:w-1/3 px-4 mb-8">
+                    <div class="bg-gray-700 p-6 rounded-lg shadow-lg min-h-56">
+                        <p class="text-gray-300 mb-4">"The bridal Mehndi design was stunning and exactly what I wanted. The color was vibrant and lasted for days. Highly recommended!"</p>
+                        <h3 class="text-2xl font-semibold text-blue-500">- Sarah K.</h3>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3 px-4 mb-8 ">
+                    <div class="bg-gray-700 p-6 rounded-lg shadow-lg min-h-56">
+                        <p class="text-gray-300 mb-4">"I loved the festival Mehndi design. It was intricate and beautifully done. The artist was professional and friendly."</p>
+                        <h3 class="text-2xl font-semibold text-blue-500 mb-0">- Priya R.</h3>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3 px-4 mb-8">
+                    <div class="bg-gray-700 p-6 rounded-lg shadow-lg min-h-56">
+                        <p class="text-gray-300 mb-4">"Amazing service and beautiful Mehendi designs. I will definitely book again for future occasions."</p>
+                        <h3 class="text-2xl font-semibold text-blue-500 mb-0">- Emily J.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</div>
+
+             
+{% endblock body %}

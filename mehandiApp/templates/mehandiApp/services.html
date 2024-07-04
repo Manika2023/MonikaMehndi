@@ -1,0 +1,181 @@
+{% extends "mehandiApp/base.html" %}
+{% load static %}
+{% block servicesactive %} bg-red-500 {% endblock servicesactive %} 
+{% block footerservicesactive %}text-red-500 {% endblock footerservicesactive %}
+{% block javascript %}  <script src="{% static 'javascript/script.js' %} "></script> {% endblock javascript %}
+{% block body %}
+     <style>
+          .services-background {
+               background: linear-gradient(135deg, #fbbf24 25%, #f97316 50%, #ec4899 75%, #8b5cf6);
+           }
+     </style>
+<div class="bg-gray-800">
+     <section class="py-12 bg-gray-800">
+
+         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+
+          <div class="p-8  services-background  ">
+             <div class="text-center text-white">
+                 <h2 class="text-base text-indigo-600 font-extrabold tracking-wide uppercase">Our Services</h2>
+                 <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-100 sm:text-4xl">
+                     Exceptional Mehandi Artistry
+                 </p>
+                 <p class="mt-4 max-w-2xl text-xl text-gray-200 font-bold mx-auto">
+                     Discover the variety of mehandi services we offer, each designed to bring out the best in you.
+                 </p>
+               </div>
+
+             </div>
+             
+             <div class="mt-10">
+
+                 <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10">
+                     <div class="relative p-4 bg-gray-600 shadow-2xl rounded-lg">
+                         <dt>
+                             <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                 <!-- Icon -->
+                                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                 xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                               </svg>
+                             </div>
+
+                             <p class="ml-16 text-lg leading-6 font-medium text-pink-500">Bridal Mehandi</p>
+                         </dt>
+                         <dd class="mt-2 ml-16 text-base text-white">
+                             Beautiful and intricate bridal mehandi designs that will make your special day even more memorable. We offer traditional and contemporary styles, ensuring that every bride feels unique and stunning.
+                         </dd>
+                         <dd class="mt-2 ml-16 text-base text-gray-100">
+                              <ul class="list-disc pl-5">
+                                  <li>Traditional Bridal Designs</li>
+                                  <li>Contemporary Bridal Styles</li>
+                                  <li>Custom Designs Based on Personal Preferences</li>
+                                  <li>Long-lasting Stains for the Wedding Festivities</li>
+                              </ul>
+                          </dd>
+                     </div>
+ 
+                     <div class="relative p-4 bg-gray-600 shadow-2xl rounded-lg">
+                         <dt>
+                             <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                 <!-- Icon -->
+                                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                             </div>
+                             <p class="ml-16 text-lg leading-6 font-medium  text-pink-500">Festival Mehandi</p>
+                         </dt>
+                         <dd class="mt-2 ml-16 text-base text-white">
+                              Celebrate festivals with our exquisite mehandi designs. Whether it's Diwali, Eid, Karva Chauth, or any other celebration, our designs add an extra touch of elegance and joy to your festivities.
+                         </dd>
+                         <dd class="mt-2 ml-16 text-base text-gray-100">
+                              <ul class="list-disc pl-5">
+                                  <li>Traditional Festival Patterns</li>
+                                  <li>Modern and Trendy Designs</li>
+                                  <li>Quick Application for Large Groups</li>
+                                  <li>Special Packages for Multiple Celebrations</li>
+                              </ul>
+                          </dd>
+                     </div>
+ 
+                     <div class="relative p-4 bg-gray-600 shadow-2xl rounded-lg">
+                         <dt>
+                             <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                 <!-- Icon -->
+                                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                               </svg>
+                             </div>
+                             <p class="ml-16 text-lg leading-6 font-medium text-pink-500">Arabic Mehandi</p>
+                         </dt>
+                         <dd class="mt-2 ml-16 text-base text-white">
+                              Our Arabic mehandi designs are known for their elegance and simplicity. These minimalistic designs are perfect for any occasion, offering a sophisticated look that complements both traditional and modern outfits.
+                         </dd>
+                         <dd class="mt-2 ml-16 text-base text-gray-100">
+                              <ul class="list-disc pl-5">
+                                   <li>Elegant Floral Patterns</li>
+                                   <li>Minimalistic and Contemporary Styles</li>
+                                   <li>Quick and Neat Application</li>
+                                   <li>Perfect for All Occasions</li>
+                              </ul>
+                          </dd>
+                     </div>
+ 
+                     <div class="relative p-4 bg-gray-600 shadow-2xl rounded-lg">
+                         <dt>
+                             <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                 <!-- Icon -->
+                                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                             </div>
+                             <p class="ml-16 text-lg leading-6 font-medium text-pink-500">Party Mehandi</p>
+                         </dt>
+                         <dd class="mt-2 ml-16 text-base text-white">
+                              Make your parties memorable with our fun and creative mehandi designs. Whether it's a birthday, anniversary, or any other celebration, our designs add a unique touch to your event.
+
+                         </dd>
+                         <dd class="mt-2 ml-16 text-base text-gray-100">
+                              <ul class="list-disc pl-5">
+                                   <li>Fun and Quirky Designs</li>
+                                   <li>Quick Application for Party Guests</li>
+                                   <li>Custom Designs Based on Party Themes</li>
+                                   <li>Packages for Small and Large Parties</li>
+                              </ul>
+                          </dd>
+                     </div>
+ 
+                 
+
+                   <div class="relative p-4 bg-gray-600 shadow-2xl rounded-lg">
+                       <dt>
+                           <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                               <!-- Icon -->
+                               <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                               xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                             </svg>
+                           </div>
+                           <p class="ml-16 text-lg leading-6 font-medium text-pink-500">Kids Mehandi</p>
+                       </dt>
+                       <dd class="mt-2 ml-16 text-base text-white">
+                         Our kids' mehandi services offer fun and safe designs that children will love. We use skin-friendly and non-toxic henna to create cute and playful patterns perfect for birthdays, school events, and more.
+
+                       </dd>
+                       <dd class="mt-2 ml-16 text-base text-gray-100">
+                         <ul class="list-disc pl-5">
+                              <li>Safe and Non-toxic Henna</li>
+                              <li>Cute and Playful Designs</li>
+                              <li>Quick and Gentle Application</li>
+                              <li>Perfect for Birthdays and School Events</li>
+                         </ul>
+                     </dd>
+                   </div>
+                  
+                   <div class="relative p-4 bg-gray-600 shadow-2xl rounded-lg">
+                       <dt>
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-white text-indigo-500">
+                            <!-- Icon -->
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                          </svg>
+                        </div>
+                           <p class="ml-16 text-lg leading-6 font-medium text-pink-500">Occasional Mehandi</p>
+                       </dt>
+
+                       <dd class="mt-2 ml-16 text-base text-white">
+                        Our occasional mehandi designs are perfect for those special moments in life that deserve a touch of elegance. Whether it's an anniversary, a family gathering, or any other personal celebration, our mehandi artists will create beautiful and meaningful designs that complement the occasion.
+                    </dd>
+                    <dd class="mt-2 ml-16 text-base text-gray-100">
+                        <ul class="list-disc pl-5">
+                            <li>Custom Designs for Personal Celebrations</li>
+                            <li>Elegant and Meaningful Patterns</li>
+                            <li>Quick and Professional Application</li>
+                            <li>Perfect for Anniversaries, Family Gatherings, and More</li>
+                        </ul>
+                    </dd>
+                   </div>
+               </dl>
+           </div>
+       </div>
+   </section>
+</div>  
+  
+{% endblock body %}

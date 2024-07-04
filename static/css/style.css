@@ -1,0 +1,30 @@
+.hero-bg {
+     background-image: url('https://www.vickymehandiart.com/images/best_bridal_mehandi_design.jpg');
+     background-size: cover;
+     background-position: center;
+ }
+ .team-member:hover .overlay {
+     opacity: 1;
+ }
+ .overlay {
+     transition: opacity 0.3s;
+ }
+ .testimonial-card {
+     min-height: 300px;
+ }
+ .star {
+     color: gold;
+ }
+ .slider-container {
+     display: flex;
+     transition: transform 1s ease;
+ }
+ .slider-item {
+     min-width: calc(100% / 3);
+ }
+ .team-member {
+     display: flex;
+     flex-direction: column;
+     align-items: stretch;
+    
+ }
