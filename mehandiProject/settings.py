@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'mehandiApp',
     'tailwind',
     'theme',
-    'django_browser_reload'
+    'django_browser_reload',
 ]
 
 MIDDLEWARE = [
@@ -78,12 +78,6 @@ WSGI_APPLICATION = 'mehandiProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 DATABASES = {
     "default": {
@@ -129,7 +123,7 @@ USE_TZ = True
 
 
 
-STATIC_URL = 'static/'
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 TAILWIND_APP_NAME = 'theme'
@@ -142,6 +136,14 @@ NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 import os
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-STATICFILES_DIRS = [
-   BASE_DIR , "static",
-]
+# settings.py
+import mimetypes
+mimetypes.add_type("text/css",".css",True)
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Static files settings
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
